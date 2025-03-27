@@ -10,13 +10,13 @@ shortening = {
   "AMB": "Ambulatorial"
 }
 
-path_pdf = "1_web_scraping/anexos/Anexo_I_Rol_2021RN_465.2021_RN627L.2024.pdf"
-path_csv = "extract_data.csv"
-path_zip = f"2_data_transform/Teste_Jackson_Santos.zip"
+PATH_PDF = "1_web_scraping/anexos/Anexo_I_Rol_2021RN_465.2021_RN627L.2024.pdf"
+PATH_CSV = "extract_data.csv"
+PATH_ZIP = f"2_data_transform/Teste_Jackson_Santos.zip"
 
-if not os.path.exists(path_pdf):
+if not os.path.exists(PATH_PDF):
   print(f'---------------------------------------')
-  print(f'Erro: Arquivo PDF não encontrado em: {path_pdf}')
+  print(f'Erro: Arquivo PDF não encontrado em: {PATH_PDF}')
   print(f'---------------------------------------')
   print(f'Para resolver este erro, gere o arquivo em 1_web_scraping!')
   exit()
@@ -49,11 +49,11 @@ def compact_csv_in_zip(path_csv, path_zip):
   with zipfile.ZipFile(path_zip, 'w', zipfile.ZIP_DEFLATED) as zipf:
     zipf.write(path_csv, os.path.basename(path_csv))
 
-data_extracts = extract_data_pdf(path_pdf)
-save_in_csv(data_extracts, path_csv)
-replace_shortening(path_csv)
-compact_csv_in_zip(path_csv, path_zip)
+data_extracts = extract_data_pdf(PATH_PDF)
+save_in_csv(data_extracts, PATH_CSV)
+replace_shortening(PATH_CSV)
+compact_csv_in_zip(PATH_CSV, PATH_ZIP)
 
-os.remove(path_csv)
+os.remove(PATH_CSV)
 
-print(f'Arquivo zipado criado com sucesso: {path_zip}')
+print(f'Arquivo zipado criado com sucesso: {PATH_ZIP}')
