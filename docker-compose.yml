@@ -1,0 +1,13 @@
+
+services:
+  db:
+    image: mysql
+    container_name: projeto_python
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: mydatabase
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    ports:
+      - "3306:3306"
