@@ -57,7 +57,7 @@ class RolProcedimentos:
         zipf.write(file, arcname=os.path.basename(file))
     print(f"Arquivos compactados em: {zip_name}")
 
-  def executar(self):
+  def execute(self):
     soup = self.acessar_pagina()
     pdf_links = self.encontrar_links_pdf(soup)
     files_downloaded = self.baixar_arquivos(pdf_links)
