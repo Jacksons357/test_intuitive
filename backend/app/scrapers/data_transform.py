@@ -23,6 +23,8 @@ class DataTransform:
       print(f'---------------------------------------')
       print(f'Erro: Arquivo PDF não encontrado em: {self.PATH_PDF}')
       print(f'---------------------------------------')
+      print(f'É necessário fazer o download dos arquivos de Atualizacao do Rol de Procedimentos primeiro!')
+      print(f'---------------------------------------')
       exit()
 
   def extract_data_pdf(self):
