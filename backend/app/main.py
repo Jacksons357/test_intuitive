@@ -23,40 +23,39 @@ if __name__ == "__main__":
   OPERADORAS_URL = "https://dadosabertos.ans.gov.br/FTP/PDA/operadoras_de_plano_de_saude_ativas/"
   BASE_DIR = "backend/downloads/data"
 
-  # print("\n1 - TESTE DE WEB SCRAPING. ")
-  # rol_procedimentos = RolProcedimentos(PATH_DIR_ROL, BASE_URL)
-  # rol_procedimentos.execute()
-  # print("\n✅ Download dos arquivos de Atualização do Rol de Procedimentos concluído!")
+  print("\n1 - TESTE DE WEB SCRAPING. ")
+  rol_procedimentos = RolProcedimentos(PATH_DIR_ROL, BASE_URL)
+  rol_procedimentos.execute()
+  print("\n✅ Download dos arquivos de Atualização do Rol de Procedimentos concluído!")
 
-  # print("\n2 - TESTE DE TRANSFORMAÇÃO DE DADOS.")
-  # data_transform = DataTransform(PATH_PDF, PATH_CSV, PATH_ZIP, PATH_DIR)
-  # data_transform.process()
-  # print("\n✅ Transformação dos dados concluída! Arquivos CSV e ZIP gerados com sucesso.")
+  print("\n2 - TESTE DE TRANSFORMAÇÃO DE DADOS.")
+  data_transform = DataTransform(PATH_PDF, PATH_CSV, PATH_ZIP, PATH_DIR)
+  data_transform.process()
+  print("\n✅ Transformação dos dados concluída! Arquivos CSV e ZIP gerados com sucesso.")
 
-  # print("\n3 - TESTE DE BANCO DE DADOS.")
-  # download_data = DownloadData(BASE_URL_DATA, OPERADORAS_URL, BASE_DIR)
-  # download_data.execute()
-  # print("\n✅ Download dos dados concluído!")
+  print("\n3 - TESTE DE BANCO DE DADOS.")
+  download_data = DownloadData(BASE_URL_DATA, OPERADORAS_URL, BASE_DIR)
+  download_data.execute()
+  print("\n✅ Download dos dados concluído!")
     
-  # print("\n3 - INSERINDO DADOS NA TABELA.")
-  # database = RunDatabase()
-  # database.drop_table()
-  # database.create_table()
-  # database.process_csv_files()
-  # print("\n✅ Dados inseridos com sucesso!")
+  print("\n3 - INSERINDO DADOS NA TABELA.")
+  database = RunDatabase()
+  database.drop_table()
+  database.create_table()
+  database.process_csv_files()
+  print("\n✅ Dados inseridos com sucesso!")
   
   print("\n3.5 Filtrando as 10 operadoras com maiores despesas no último trimestre.")
   path_file = os.path.join("backend","downloads", "data", "2024", "4T2024.csv")
-  path_output = "backend/downloads/data/operadoras/top10_operadoras.csv"
+  path_output = "backend/downloads/data/top10_operadoras.csv"
   process = FilterOperadoras(path_file, path_output)
   process.processar_dados()
   print("\n✅ Filtragem realizada com sucesso!")
   
   print("\n3.5 Filtrando as 10 operadoras com maiores despesas no último ano.")
-  caminho_pasta = os.path.join("backend", "downloads", "data", "2024")
-  caminho_saida = "backend/downloads/data/operadoras/top10_operadoras_1_ano.csv"
-  process = FilterAllOperadoras(caminho_pasta, caminho_saida)
+  path_file = os.path.join("backend", "downloads", "data", "2024")
+  path_output = "backend/downloads/data/top10_operadoras_1_ano.csv"
+  process = FilterAllOperadoras(path_file, path_output)
   process.processar_dados()
   print("\n✅ Filtragem realizada com sucesso!")
 
-  print("\n🚀 Processo finalizado! Todos os passos foram executados com sucesso. Obrigado por participar do teste!")
