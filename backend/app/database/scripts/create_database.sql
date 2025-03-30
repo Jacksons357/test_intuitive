@@ -24,13 +24,3 @@ CREATE TABLE operadoras (
   regiao_comercializacao VARCHAR(255),
   data_registro_ans DATE
 );
-
-CREATE TABLE demonstracoes_contabeis (
-  id SERIAL PRIMARY KEY,
-  data DATE NOT NULL,
-  registro_ans VARCHAR(20) NOT NULL,
-  cd_conta_contabil VARCHAR(20) NOT NULL,
-  descricao VARCHAR(255),
-  vl_saldo_inicial DECIMAL(15,2),
-  vl_saldo_final DECIMAL(15,2)
-);
