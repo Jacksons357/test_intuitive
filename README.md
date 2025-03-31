@@ -1,6 +1,8 @@
 # Teste - IntuitiveCare
 
-Este é um projeto de teste para a empresa Intuitive. Siga as instruções abaixo para configurar e rodar o projeto na sua máquina.
+Este é um projeto de teste para a empresa IntuitiveCare.
+
+Siga corretamente as instruções deste README para garantir uma instalação e configuração sem problemas.
 
 ## Requisitos
 
@@ -110,7 +112,16 @@ O projeto irá rodar em http://localhost:3000/ e você já verá a tabela com os
 - Verifique se as portas da API e do front end não estão em conflito com outros serviços.
 - Em caso de falha nos testes da API, verifique o console para identificar e corrigir os erros.
 
+### Os arquivos do teste estão localizados na pasta de **Downloads** dentro de /app
+
+- Teste 1 ➜ **downloads/rol_procedimentos**
+- Teste 2 ➜ **downloads/data_transform**
+- Teste 3.1 ➜ **downloads/data/2023 e 2024**
+- Teste 3.2 ➜ **downloads/data/operadoras**
+- Teste 3.5 ➜ **downloads/data**
+
 ## Agradecimento
 
-Estou grato por testar o meu projeto, e estou a disposição caso tenha dúvidas.
-Email: contato@devjackson.tech
+Quero agradecer por essa oportunidade. Foi um desafio e tanto, mas aprendi muita coisa no processo. Se pintarem dúvidas, estou por aqui!
+
+📩 E-mail: contato@devjackson.tech
