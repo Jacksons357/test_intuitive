@@ -98,9 +98,9 @@ O projeto irá rodar em http://localhost:3000/ e você já verá a tabela com os
 
 ## Observações
 
-* Certifique-se de que a API esteja em execução antes de iniciar o front end.
-* Verifique se as portas da API e do front end não estão em conflito com outros serviços.
-* Em caso de falha nos testes da API, verifique o console para identificar e corrigir os erros.
+- Certifique-se de que a API esteja em execução antes de iniciar o front end.
+- Verifique se as portas da API e do front end não estão em conflito com outros serviços.
+- Em caso de falha nos testes da API, verifique o console para identificar e corrigir os erros.
 
 ## Agradecimento
 
