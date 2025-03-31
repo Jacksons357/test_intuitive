@@ -4,6 +4,7 @@ from database.download_data import DownloadData
 from database.run_database import RunDatabase
 from database.filter_operadoras import FilterOperadoras
 from database.filter_all_operadoras import FilterAllOperadoras
+from app import RunApi
 import os
 
 print("\nOLÁ! SEJA BEM-VINDO AO TESTE PARA ESTÁGIO DE ENGENHEIRO DE SOFTWARE.")
@@ -58,4 +59,8 @@ if __name__ == "__main__":
   process = FilterAllOperadoras(path_file, path_output)
   process.processar_dados()
   print("\n✅ Filtragem realizada com sucesso!")
+  
+  print("\n4 - Iniciando a API...")
+  api = RunApi()
+  api.run()
 
