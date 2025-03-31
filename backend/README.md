@@ -37,7 +37,13 @@ cd test_intuitive
 
 ### 2. **Configure as variáveis de ambiente**
 
-Copie o arquivo `.env.example` e crie o arquivo `.env`
+2.1. Acesse a pasta backend:
+
+```bash
+cd backend/
+```
+
+2.2. Copie o arquivo `.env.example` e crie o arquivo `.env`
 
 ```bash
 cp .env.example .env
@@ -51,19 +57,52 @@ Para construir e rodar a imagem Docker, execute:
 docker compose up --build -d
 ```
 
-### 4. **Instale as dependências do backend**
+### 4. **Execute o backend e a API**
 
-O projeto utiliza bibliotecas como pandas, pdfplumber e outras para otimização. Rode o seguinte comando:
-
-```bash
-docker build -t test_intuitive .
-```
-### 5. **Execute o backend e a API**
-
-1. Navegue até a pasta do backend:
+4.1. Navegue até a pasta do app:
 
 ```bash
-cd backend/app
+cd app/
 ```
 
-2. Execute o arquivo main.py para rodar a aplicação e instalar automaticamente as dependências necessárias.
+4.2. Inicie o arquivo `main.py`:
+
+```bash
+python3 ./main.py
+```
+
+Agora você verá a execução dos testes e lógo após iniciando a API localmente.
+
+### 5. **Executando Testes e Interagindo com a API via Postman**
+
+- Baixar no Google Drive: [Coleção Postman](https://drive.google.com/file/d/1FoVy6rLrWUo8AqzCyLH0bLei9BdgXrnX/view?usp=sharing)
+
+- Acessar via Postman Web: [Acessar via Postman Web](https://jacksonsantos-448800.postman.co/workspace/Jackson-Santos's-Workspace~22dc40f1-7ade-4169-8a28-087b5ac9e885/collection/43615751-0271e10e-fd61-4868-a2e5-215a91c2c045?action=share&creator=43615751)
+
+### 6. **Exibindo o Front End com Vue.js**
+
+6.1. Com a API ativa, abra um novo terminal e acesse a pasta frontend
+
+```bash
+cd frontend/
+```
+
+6.2. Instale as dependencias e rode o projeto:
+
+```bash
+pnpm install
+pnpm run dev
+```
+
+O projeto irá rodar em http://localhost:3000/ e você já verá a tabela com os dados e um input de busca para realizar consultas na tabela.
+
+## Observações
+
+* Certifique-se de que a API esteja em execução antes de iniciar o front end.
+* Verifique se as portas da API e do front end não estão em conflito com outros serviços.
+* Em caso de falha nos testes da API, verifique o console para identificar e corrigir os erros.
+
+## Agradecimento
+
+Estou grato por testar o meu projeto, e estou a disposição caso tenha dúvidas.
+Email: contato@devjackson.tech
