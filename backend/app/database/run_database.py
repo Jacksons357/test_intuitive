@@ -34,7 +34,7 @@ class RunDatabase:
 
   def create_table(self):
     self.connect_db()
-    with open('backend/app/database/scripts/create_database.sql', 'r', encoding='utf-8') as f:
+    with open('./backend/app/database/scripts/create_database.sql', 'r', encoding='utf-8') as f:
       sql = f.read()
     self.cursor.execute(sql)
     self.close_connection()

@@ -1,5 +1,4 @@
 DROP TABLE IF EXISTS operadoras;
-DROP TABLE IF EXISTS demonstracoes_contabeis;
 
 CREATE TABLE operadoras (
   id SERIAL PRIMARY KEY,
