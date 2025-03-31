@@ -34,7 +34,9 @@ class RunDatabase:
 
   def create_table(self):
     self.connect_db()
-    with open('./backend/app/database/scripts/create_database.sql', 'r', encoding='utf-8') as f:
+    sql_file = './database/scripts/create_database.sql'
+    
+    with open(sql_file, 'r', encoding='utf-8') as f:
       sql = f.read()
     self.cursor.execute(sql)
     self.close_connection()
@@ -56,24 +58,8 @@ class RunDatabase:
         self.conn.commit()
     self.close_connection()
 
-  def insert_demonstracoes_contabeis_from_csv(self, file_path):
-    self.connect_db()
-    with open(file_path, 'r', encoding='utf-8') as f:
-      reader = csv.reader(f, delimiter=';')
-      next(reader)
-      rows = list(reader)
-      for row in tqdm(rows, desc=f'Inserindo dados de {file_path}', unit='registro'):
-        row[4] = row[4].replace(',', '.')
-        row[5] = row[5].replace(',', '.')
-        self.cursor.execute("""
-          INSERT INTO demonstracoes_contabeis (data, registro_ans, cd_conta_contabil, descricao, vl_saldo_inicial, vl_saldo_final)
-          VALUES (%s, %s, %s, %s, %s, %s)
-        """, row)
-        self.conn.commit()
-    self.close_connection()
-
   def process_csv_files(self):
-      BASE_DIR = 'backend/downloads/data'
+      BASE_DIR = './downloads/data'
       year_dir = os.path.join(BASE_DIR, 'operadoras')
       if os.path.exists(year_dir):
         for file_name in os.listdir(year_dir):

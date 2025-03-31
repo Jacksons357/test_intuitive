@@ -13,16 +13,16 @@ print("Caso tenha dúvidas, entre em contato comigo:\nEmail: contato@devjackson.
 
 if __name__ == "__main__":
   BASE_URL = "https://www.gov.br/ans/pt-br/acesso-a-informacao/participacao-da-sociedade/atualizacao-do-rol-de-procedimentos"
-  PATH_DIR_ROL = "backend/downloads/rol_procedimentos"
+  PATH_DIR_ROL = "./downloads/rol_procedimentos"
 
-  PATH_PDF = "backend/downloads/rol_procedimentos/Anexo_I_Rol_2021RN_465.2021_RN627L.2024.pdf"
+  PATH_PDF = "./downloads/rol_procedimentos/Anexo_I_Rol_2021RN_465.2021_RN627L.2024.pdf"
   PATH_CSV = "extract_data.csv"
-  PATH_ZIP = "backend/downloads/data_transform/Teste_Jackson_Santos.zip"
-  PATH_DIR = "backend/downloads/data_transform"
+  PATH_ZIP = "./downloads/data_transform/Teste_Jackson_Santos.zip"
+  PATH_DIR = "./downloads/data_transform"
 
   BASE_URL_DATA = "https://dadosabertos.ans.gov.br/FTP/PDA/demonstracoes_contabeis/"
   OPERADORAS_URL = "https://dadosabertos.ans.gov.br/FTP/PDA/operadoras_de_plano_de_saude_ativas/"
-  BASE_DIR = "backend/downloads/data"
+  BASE_DIR = "./downloads/data"
 
   print("\n1 - TESTE DE WEB SCRAPING. ")
   rol_procedimentos = RolProcedimentos(PATH_DIR_ROL, BASE_URL)
@@ -47,15 +47,15 @@ if __name__ == "__main__":
   print("\n✅ Dados inseridos com sucesso!")
   
   print("\n3.5 Filtrando as 10 operadoras com maiores despesas no último trimestre.")
-  path_file = os.path.join("backend","downloads", "data", "2024", "4T2024.csv")
-  path_output = "backend/downloads/data/top10_operadoras.csv"
+  path_file = './downloads/data/2024/4T2024.csv'
+  path_output = "./downloads/data/top10_operadoras.csv"
   process = FilterOperadoras(path_file, path_output)
   process.processar_dados()
   print("\n✅ Filtragem realizada com sucesso!")
   
   print("\n3.5 Filtrando as 10 operadoras com maiores despesas no último ano.")
-  path_file = os.path.join("backend", "downloads", "data", "2024")
-  path_output = "backend/downloads/data/top10_operadoras_1_ano.csv"
+  path_file = './downloads/data/2024'
+  path_output = "./downloads/data/top10_operadoras_1_ano.csv"
   process = FilterAllOperadoras(path_file, path_output)
   process.processar_dados()
   print("\n✅ Filtragem realizada com sucesso!")

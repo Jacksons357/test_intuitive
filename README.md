@@ -1,4 +1,4 @@
-# Teste de Desenvolvedor - Intuitive
+# Teste - IntuitiveCare
 
 Este é um projeto de teste para a empresa Intuitive. Siga as instruções abaixo para configurar e rodar o projeto na sua máquina.
 
@@ -35,9 +35,15 @@ git clone https://github.com/Jacksons357/test_intuitive.git
 cd test_intuitive
 ```
 
+1.1. Abra em seu editor(VSCode)
+
+```bash
+code .
+```
+
 ### 2. **Configure as variáveis de ambiente**
 
-2.1. Acesse a pasta backend:
+2.1. Abra o terminal e acesse a pasta backend:
 
 ```bash
 cd backend/
@@ -56,6 +62,8 @@ Para construir e rodar a imagem Docker, execute:
 ```bash
 docker compose up --build -d
 ```
+
+(Certifique-se de o docker desktop estar aberto)
 
 ### 4. **Execute o backend e a API**
 

@@ -50,7 +50,7 @@ class RolProcedimentos:
     return files_downloaded
 
   def compactar_arquivos(self, files_downloaded):
-    zip_name = "backend/downloads/rol_procedimentos/anexos.zip"
+    zip_name = "./downloads/rol_procedimentos/anexos.zip"
     print("Compactando os arquivos em ZIP...")
     with zipfile.ZipFile(zip_name, "w", zipfile.ZIP_DEFLATED) as zipf:
       for file in files_downloaded:
