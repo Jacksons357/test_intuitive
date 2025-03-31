@@ -1,9 +1,11 @@
-from flask import Flask, jsonify, request
+from flask import Flask
 from controllers import operator_controller
+from flask_cors import CORS
 
 class RunApi:
   def __init__(self):
     self.app = Flask(__name__)
+    CORS(self.app)
     self.setup_routes()
 
   def setup_routes(self):
