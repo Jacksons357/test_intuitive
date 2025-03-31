@@ -10,6 +10,8 @@ Antes de começar, verifique se você tem as seguintes ferramentas instaladas:
 - **Node.js** - Para executar o ambiente de desenvolvimento frontend (caso necessário)
 - **MySQL** - Banco de dados utilizado pelo projeto
 - **Docker** - Para criar e rodar o contêiner da aplicação
+- **Docker Compose** - Geralmente incluído no Docker Desktop
+- **Git** - Para clonar o repositório
 
 ### Para verificar se essas ferramentas estão instaladas:
 
@@ -18,21 +20,22 @@ python --version
 node --version
 mysql --version
 docker --version
+docker compose version
 ```
 
 **Docker Compose**: Geralmente já incluído no Docker Desktop.
 **Git (opcional)**: Para clonar o repositório do projeto.
 
-### Passos para Instalação
+### Configuração do Projeto
 
-1. **Clone o repositório**
+# 1. **Clone o repositório**
 
 ```bash
 git clone https://github.com/Jacksons357/test_intuitive.git
 cd test_intuitive
 ```
 
-2. **Configure as variáveis de ambiente**
+# 2. **Configure as variáveis de ambiente**
 
 Copie o arquivo `.env.example` e crie o arquivo `.env`
 
@@ -40,7 +43,7 @@ Copie o arquivo `.env.example` e crie o arquivo `.env`
 cp .env.example .env
 ```
 
-3. **Construção e Execução com Docker**
+# 3. **Construção e Execução com Docker**
 
 Para construir e rodar a imagem Docker, execute:
 
@@ -48,14 +51,14 @@ Para construir e rodar a imagem Docker, execute:
 docker compose up --build -d
 ```
 
-4. **Instale as dependências do backend**
+# 4. **Instale as dependências do backend**
 
 O projeto utiliza bibliotecas como pandas, pdfplumber e outras para otimização. Rode o seguinte comando:
 
 ```bash
 docker build -t test_intuitive .
 ```
-5. **Execute o backend e a API**
+# 5. **Execute o backend e a API**
 
 1. Navegue até a pasta do backend:
 
