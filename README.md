@@ -32,18 +32,35 @@ git clone https://github.com/Jacksons357/test_intuitive.git
 cd test_intuitive
 ```
 
-2. **Copie o arquivo `.env.example` e crie o arquivo `.env`**
+2. **Configure as variáveis de ambiente**
 
-O arquivo `.env` contém as configurações do ambiente, incluindo variáveis sensíveis como credenciais de banco de dados.
+Copie o arquivo `.env.example` e crie o arquivo `.env`
 
 ```bash
 cp .env.example .env
 ```
 
-3. **Construir e rodar o contêiner Docker:**
+3. **Construção e Execução com Docker**
 
-O projeto utiliza Docker para facilitar o ambiente de desenvolvimento. Para construir e rodar a imagem Docker, utilize o seguinte comando:
+Para construir e rodar a imagem Docker, execute:
 
 ```bash
-docker-compose up --build
+docker compose up --build -d
 ```
+
+4. **Instale as dependências do backend**
+
+O projeto utiliza bibliotecas como pandas, pdfplumber e outras para otimização. Rode o seguinte comando:
+
+```bash
+docker build -t test_intuitive .
+```
+5. **Execute o backend e a API**
+
+1. Navegue até a pasta do backend:
+
+```bash
+cd backend/app
+```
+
+2. Execute o arquivo main.py para rodar a aplicação e instalar automaticamente as dependências necessárias.
